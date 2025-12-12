@@ -30,6 +30,16 @@ swagger_urlpatterns = [
 urlpatterns = [
     path('', render_index_page, name='home_page'),
     path('admin/', admin.site.urls),
+    path('users/', include('apps.users.urls.urls_v1')),
+     path('university/', include('apps.university.urls.urls_v1')),
+      path('post/', include('apps.post.urls.urls_v1')),
+       path('event/', include('apps.event.urls.urls_v1')),
+        path('membership/', include('apps.membership.urls.urls_v1')),
+         path('club/', include('apps.club.urls.urls_v1')),
+          path('recruitment/', include('apps.recruitment.urls.urls_v1')),
+           path('authentication/', include('apps.authentication.urls.urls_v1')),
+            # path('notification/', include('apps.notification.urls.urls_v1')),
+             path('faq/', include('apps.faq.urls.urls_v1')),
 ] + swagger_urlpatterns
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

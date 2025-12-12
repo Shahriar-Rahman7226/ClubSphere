@@ -38,7 +38,16 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 CUSTOM_APPS = [
-
+    'apps.users',
+    'apps.authentication',
+    'apps.club',
+    'apps.event',
+    'apps.post',
+    'apps.membership',
+     'apps.university',
+      'apps.recruitment',
+       'apps.notification',
+        'apps.faq',
 ]
 
 INSTALLED_LIBRARIES = [
@@ -167,7 +176,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
