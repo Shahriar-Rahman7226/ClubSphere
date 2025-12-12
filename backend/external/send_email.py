@@ -7,7 +7,7 @@ from django.conf import settings
 def send_email(user_id=None, subject=None, body=None, request_user=None):
     if not user_id:
         user_id =request_user
-    user_obj = UserModel.objects.get(id=user_id)
+    user_obj = User.objects.get(id=user_id)
 
     mail_subject = subject
     message = f"Greetings {user_obj.first_name}!\n {body}"
@@ -23,7 +23,3 @@ def send_email(user_id=None, subject=None, body=None, request_user=None):
         return ("Email sent")
     else:
         return ("Email failed")
-    
-
-def send_sms(user_obj):
-    pass
