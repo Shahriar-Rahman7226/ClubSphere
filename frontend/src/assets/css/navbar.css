@@ -1,0 +1,186 @@
+/* ================================
+   Admin Navbar Styles — LOGO UPDATED
+================================ */
+
+.admin_navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #002861;
+  padding: 10px 4vw;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+/* Navbar sections */
+.admin_navbar_left,
+.admin_navbar_center,
+.admin_navbar_right {
+  display: flex;
+  align-items: center;
+}
+
+.admin_navbar_left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.admin_navbar_center {
+  flex: 1;
+  justify-content: center;
+  gap: 40px;
+}
+
+.admin_navbar_right {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* Logo */
+.admin_navbar_logo {
+  height: 130px; /* Increased size */
+  width: auto;
+  cursor: pointer;
+  transform: translateY(20%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.admin_navbar_logo:hover {
+ transform: translateY(10%) scale(1.05); /* keep the downward position on hover + scale */
+  filter: drop-shadow(0 4px 12px #ff914d);
+}
+
+/* Center nav links */
+.nav_link {
+  color: #ff914d;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav_link:hover {
+  color: #ffffff;
+  transform: scale(1.08);
+  text-decoration: underline;        /* adds underline */
+  text-decoration-color: #ff914d;    /* underline color */
+  text-underline-offset: 4px;        /* distance of underline from text */
+  text-decoration-thickness: 2px;   
+}
+
+/* Notification Icon */
+.admin_navbar_icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff914d;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.admin_navbar_icon:hover {
+  color: #ffffff;
+  transform: rotate(-12deg) scale(1.1);
+}
+
+/* Profile Icon */
+.admin_profile_icon {
+  color: #ffa94d;
+  cursor: pointer;
+  border: 2px solid #ff914d;
+  border-radius: 50%;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.admin_profile_icon:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+  border-color: #3672d5;
+}
+
+/* Spacer for fixed navbar */
+.admin_navbar_spacer {
+  height: 100px;
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin_navbar_logo {
+    height: 90px; /* responsive adjustment */
+  }
+
+  .nav_link {
+    font-size: 1.3rem;
+  }
+
+  .admin_navbar_icon,
+  .admin_profile_icon {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin_navbar_center {
+    gap: 20px;
+  }
+
+  .nav_link {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== CLUBS DROPDOWN ===== */
+.clubs-dropdown-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.clubs-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px 0;
+  min-width: 250px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+
+  /* New for smooth transition */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.clubs-dropdown-container:hover .clubs-dropdown {
+  max-height: 500px; /* enough for 5-6 items */
+  opacity: 1;
+}
+
+.clubs-dropdown-item {
+  color: #ff914d;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.clubs-dropdown-item:hover {
+  background: #ff914d;
+  color: #002861;
+  text-decoration: none;
+  transform: scale(1.03);
+}

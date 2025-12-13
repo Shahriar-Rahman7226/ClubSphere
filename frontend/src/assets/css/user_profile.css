@@ -1,0 +1,215 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --blue: #3672d5;
+  --green: #045600;
+  --red: #ff4d4d;
+  --surface: #f6f9ff;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* PAGE */
+.user-profile-page{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 70px 0;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+}
+
+/* CARD */
+.user-profile-card{
+  width: 1050px; /* wider */
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 48px 56px;
+  box-shadow: 0 14px 34px rgba(2,8,30,0.1);
+}
+
+/* NAME */
+.profile-name{
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 36px;
+}
+
+/* MAIN PROFILE ROW */
+.profile-main{
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+/* IMAGE */
+.profile-image-wrapper{
+  flex-shrink: 0;
+}
+
+.profile-image{
+  width: 250px; /* larger */
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--orange);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-right: 150px;
+  margin-left: 100px;
+}
+
+/* INFO */
+.profile-info{
+  flex: 1;
+}
+
+.profile-info p{
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+/* EDIT PROFILE */
+.profile-action{
+  margin: 36px 0;
+  text-align: center;
+}
+
+.edit-profile-btn{
+  background: linear-gradient(90deg, #3672d5, #ff914d);
+  color: var(--navy);
+  border: none;
+  padding: 16px 80px; /* wider */
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.edit-profile-btn:hover{
+  background: linear-gradient(90deg, #ff914d, #3672d5);
+  transform: translateY(-3px);
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 40px 0 24px;
+  color: var(--navy);
+}
+
+/* CLUB OVERVIEW */
+.club-overview{
+  display: flex;
+  flex-direction: column; /* single column */
+  gap: 22px;
+  align-items: center;
+}
+
+/* CLUB TILE */
+.club-tile{
+  width: 90%; /* wider */
+  background: #eef6ff;
+  border-radius: 16px;
+  padding: 26px 28px;
+  position: relative;
+  border-left: 6px solid var(--orange);
+  transition: 0.25s ease;
+}
+
+.club-tile:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.club-tile h4{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+
+.club-tile p{
+  font-size: 1.1rem;
+}
+
+/* STATUS */
+.club-status{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.club-status.current{
+  background-color: var(--green);
+}
+
+.club-status.former{
+  background-color: var(--navy);
+}
+
+/* ACCOUNT ACTIONS */
+.account-actions{
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column; /* stacked */
+  gap: 18px;
+}
+
+.reset-btn,
+.signout-btn{
+  padding: 16px 0;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.reset-btn{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.reset-btn:hover{
+  transform: translateY(-3px);
+}
+
+.signout-btn{
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.signout-btn:hover{
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+  .user-profile-card{
+    width: 95%;
+    padding: 36px 28px;
+  }
+
+  .profile-main{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-info{
+    width: 100%;
+  }
+
+  .club-tile{
+    width: 100%;
+  }
+}

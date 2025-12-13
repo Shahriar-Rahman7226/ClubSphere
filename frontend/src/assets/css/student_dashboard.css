@@ -1,0 +1,330 @@
+/* ===========================
+   student_dashboard.css — UPDATED 
+   ClubSphere — Clean, fun, colorful
+   Colors: #ff914d, #002861, #045600, #3672d5 + white/black
+   =========================== */
+
+:root{
+  --orange: #ff914d;
+  --navy:   #002861;
+  --green:  #045600;
+  --blue:   #3672d5;
+  --white:  #ffffff;
+  --black:  #000000;
+  --surface: #f6f9ff;
+  --post-bg: #eef6ff;
+}
+
+/* ===== GLOBAL RESET & FIX FOOTER GAP ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+/* Page base */
+.student-dashboard{
+  width:100%;
+  min-height:100vh; /* ensure footer sticks to bottom */
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 56px; /* space for footer */
+}
+
+/* ===== HERO ===== */
+.hero-section-student{
+  position: relative;
+  width:100%;
+  height:460px;
+  overflow:hidden;
+  margin-bottom: 18px;
+  border-radius: 6px;
+}
+
+.hero-banner-student{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+  will-change: transform;
+}
+
+.hero-section-student:hover .hero-banner-student{
+  transform: scale(1.06) translateY(-8px);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.hero-overlay-student{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background: linear-gradient(180deg,
+    rgba(0,40,97,0.70),
+    rgba(54,114,213,0.45) 55%,
+    rgba(255,145,77,0.12));
+  backdrop-filter: blur(0.5px);
+  padding: 0 20px;
+  color: var(--white);
+}
+
+
+.hero-overlay-student img{
+  margin-bottom:10px;
+  margin-top: 30px;
+}
+
+.hero-overlay-student h1{
+  margin:0;
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-shadow: 0 6px 22px rgba(2,8,30,0.6);
+}
+
+
+
+/* .hero-tagline{
+  margin-top: 10px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(240,248,255,0.95);
+} */
+
+/* ===== CLUBS ===== */
+.club-section{
+  width:99%;
+  margin-top: 28px;
+  padding: 0 12px;
+}
+
+.section-title.center{
+  text-align:center;
+  color: var(--navy);
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* Horizontal layout with arrows aligned */
+.club-controls{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:10px;
+}
+
+.club-arrow{
+  flex-shrink:0;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, var(--orange), #ff7a2a );
+  color:white;
+  font-size:26px;
+  cursor:pointer;
+  border:none;
+  transition:0.2s;
+  box-shadow:0 6px 16px rgba(0,0,0,0.15);
+  position:relative;
+  z-index:5;
+}
+
+.club-arrow:hover{
+  transform: scale(1.08);
+  background: linear-gradient(180deg, var(--blue), #2b64bf);
+}
+
+/* Horizontal slider */
+.club-slider{
+  display:flex;
+  gap:22px;
+  flex-grow:1;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding: 20px 4px;
+  scrollbar-width:none;
+}
+.club-slider::-webkit-scrollbar{ display:none; }
+
+/* Club cards */
+.club-card{
+  flex:0 0 240px;
+  height:280px;
+  background: #ffffff;
+  border-radius: 150px;
+  padding: 14px;
+  box-shadow:0 6px 22px rgba(2,8,30,0.06);
+  border:2px solid rgba(54,114,213,0.18);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition:0.22s;
+}
+
+.club-card:hover{
+  transform: translateY(-6px) scale(1.04);
+  border-color: var(--orange);
+}
+
+.club-card img{
+  width: 92%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 70px;
+  background: #f0f6ff;
+  box-shadow:0 8px 18px rgba(2,8,30,0.06);
+}
+
+.club-name{
+  margin-top: 8px;
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--navy);
+  text-align:center;
+}
+
+/* ===== NEWSFEED ===== */
+.post-section{
+  margin-top: 46px;
+  margin-bottom: 64px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:22px;
+  padding-bottom:20px;
+  border-bottom:2px solid rgba(0,0,0,0.15);
+}
+
+.post-card{
+  width: 90%;
+  max-width:1200px;
+  background: var(--post-bg);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 28px rgba(2,8,30,0.06);
+  border-left:6px solid var(--orange);
+  transition:0.16s;
+}
+
+.post-card:hover{
+  transform:translateY(-6px);
+}
+
+.post-title{
+  color:var(--navy);
+  font-weight:800;
+  font-size:1.6rem;
+}
+
+.post-user{
+  color:var(--blue);
+  margin-top:6px;
+  font-weight:600;
+}
+
+.post-image{
+  display:block;
+  margin: 18px auto 0 auto;
+  width: 100%;
+  max-width:100%;
+  height: auto;
+  max-height:420px;
+  object-fit: contain;
+  border-radius:14px;
+}
+
+.post-caption{
+  margin-top:14px;
+  text-align: center;
+  color:var(--black);
+  font-size:1.1rem;
+  font-weight:500;
+}
+
+/* ===== LIKE + REACH OUT BUTTONS ===== */
+.post-actions{
+  display:flex;
+  gap:14px;
+  margin-top:16px;
+}
+
+/* Like Button */
+.like-btn{
+  width:50px;
+  height:50px;
+  border-radius:999px;
+  border:3px solid var(--orange);
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:22px;
+  color:var(--orange);
+  font-weight:900;
+}
+
+.like-btn:hover{
+  transform:scale(1.08);
+}
+
+.like-btn.liked{
+  background: var(--orange);
+  color:white;
+  border-color: var(--orange);
+}
+
+/* Reach Out Button (same design, different color: BLUE) */
+.reach-btn{
+  width:50px;
+  height:50px;
+  border-radius:999px;
+  border:3px solid var(--blue);
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:22px;
+  color:var(--blue);
+  font-weight:900;
+}
+
+.reach-btn:hover{
+  transform:scale(1.08);
+  background: rgba(54,114,213,0.12);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1100px){
+  .club-card{ flex:0 0 210px; height:250px; }
+  .club-card img{ height:160px; }
+  .post-card{ width:92%; }
+}
+
+@media (max-width:760px){
+  .club-card{ flex:0 0 180px; height:220px; }
+  .club-card img{ height:130px; }
+  .club-arrow{ width:42px; height:42px; font-size:20px; }
+  .post-card{ width:94%; }
+}
+
+@media (max-width:420px){
+  .club-arrow{ display:none; }
+  .club-card{ flex:0 0 150px; height:200px; }
+}

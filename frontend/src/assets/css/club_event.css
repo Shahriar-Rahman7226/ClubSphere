@@ -1,0 +1,178 @@
+
+:root {
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* PAGE WRAPPER */
+.club-event-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 65%);
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 60px;
+  color: var(--navy);
+}
+
+/* HEADER */
+.event-header {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.event-header h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+/* FILTER BAR */
+.event-filters {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  border-radius: 28px;
+  font-weight: 700;
+  border: 3px solid var(--navy);
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filter-btn:hover {
+  transform: translateY(-4px);
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+}
+
+.filter-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* EVENT COLUMN LAYOUT */
+.event-column {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0; 
+}
+
+/* EVENT CARD */
+.event-card {
+  width: 100%; 
+  background: #eef6ff;
+  /* margin: auto; */
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(2, 8, 30, 0.08);
+  border-left: 10px solid var(--orange);
+   border-Right: 10px solid var(--orange);
+  transition: 0.2s;
+  margin-bottom: 35px; 
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+/* TITLE */
+.event-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--navy);
+  text-align: center;
+}
+
+/* DESCRIPTION */
+.event-description {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  color: var(--black);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* DATES */
+.event-dates {
+  margin-top: 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-align: center;
+}
+
+.event-dates p {
+  margin: 4px 0;
+}
+
+/* CARD FOOTER */
+.event-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* VIEW DETAILS BUTTON */
+.details-btn {
+  background: var(--orange);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.details-btn:hover {
+  background: var(--navy);
+}
+
+/* NO EVENTS */
+.no-events {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .event-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .details-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+}

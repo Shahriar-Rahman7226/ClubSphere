@@ -15,7 +15,7 @@ from ..serializers.serializers_v1 import *
 from external.time_checker import time_checker
 from apps.users.models import *
 from rest_framework import status
-from external.send_message import send_email
+from external.send_email import send_email
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
@@ -39,13 +39,13 @@ class LoginViewSet(ModelViewSet):
 
     @transaction.atomic()
     def create(self, request, *args, **kwargs):
-        phone_number = request.data.get('email', None)
+        email = request.data.get('email', None)
         password = request.data.get('password', None)
 
-        if not phone_number or not password:
+        if not email or not password:
             return Response({'message': 'Email and Password is required'}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
-        instance = self.model_class.objects.filter(phone_number=phone_number).first()
+        instance = self.model_class.objects.filter(email=email).first()
 
         if not instance:
             return Response({'message': 'Invalid user'}, status=status.HTTP_400_BAD_REQUEST)
@@ -69,6 +69,7 @@ class LoginViewSet(ModelViewSet):
                 data = get_tokens_for_user(instance)
                 data['last_login_time'] = instance.last_login
                 data['detail'] = 'Login successful'
+                data['user_id'] = str(instance.id) 
                 return Response(data, status=status.HTTP_202_ACCEPTED)
             else:
                 instance.login_attempt += 1

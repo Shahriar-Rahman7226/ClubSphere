@@ -1,0 +1,215 @@
+/* =======================================
+   club_profile.css — Updated
+   ======================================= */
+
+:root {
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* PAGE */
+.club-profile-page {
+  width: 100%;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 70%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  padding-bottom: 60px;
+}
+
+/* CONTAINER */
+.profile-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/* ===============================
+   MERGED MAIN TILE
+   =============================== */
+.merged-section {
+  background: #eef6ff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(2, 8, 30, 0.06);
+}
+
+.merged-section h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.merged-section p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 22px;
+}
+
+/* ===============================
+   FACULTY ADVISOR SECTION
+   =============================== */
+
+.advisor-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.advisor-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 10px 24px rgba(2, 8, 30, 0.06);
+  flex-wrap: wrap;
+}
+
+/* Circular image */
+.advisor-img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 14px rgba(2, 8, 30, 0.12);
+}
+
+.advisor-details {
+  flex: 1;
+  min-width: 250px;
+}
+
+.advisor-name {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.advisor-department {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.advisor-bio {
+  font-size: 1.1rem;
+  color: var(--black);
+  margin: 14px 0 20px 0;
+  line-height: 1.55;
+}
+
+.advisor-tenure {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 14px 0 20px 0;
+  line-height: 1.55;
+}
+
+/* More details button */
+.details-btn {
+  padding: 12px 24px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  float: right;
+  transition: 0.25s;
+}
+
+.details-btn:hover {
+  background: var(--navy);
+}
+
+/* ===============================
+   MEMBERS + FACULTY BUTTON ROW
+   =============================== */
+.members-buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.member-btn {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 14px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Left — Former Faculty Advisor */
+.former-faculty {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.former-faculty:hover {
+  background: var(--white);
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+/* Middle — Former Members */
+.former-members {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.former-members:hover {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Right — Current Members */
+.current-members {
+  background: var(--green);
+  color: var(--white);
+}
+
+.current-members:hover {
+  background: var(--white);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+  .advisor-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .members-buttons {
+    flex-direction: column;
+  }
+
+  .member-btn {
+    width: 100%;
+  }
+
+  .details-btn {
+    float: none;
+    width: 100%;
+  }
+}

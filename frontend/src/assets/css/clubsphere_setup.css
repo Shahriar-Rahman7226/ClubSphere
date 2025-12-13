@@ -1,0 +1,135 @@
+/* =============================
+   Setup / Sign-In Page Styling
+============================= */
+
+.signin-page {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #ff914d, #3672d5, #002861, #045600);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.signin-box {
+  background: rgba(255, 255, 255, 0.96);
+  color: #002861;
+  padding: 80px 120px;
+  border-radius: 32px;
+  box-shadow: 0 30px 70px rgba(0, 40, 97, 0.25);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+}
+
+.welcome-text {
+  font-size: 30px;
+  font-weight: 700;
+  color: #002861;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.signin-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #3672d5;
+  margin-bottom: 40px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  color: #002861;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #3672d5;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #f7fbff;
+}
+
+.input-group input:focus {
+  border-color: #002861;
+  box-shadow: 0 0 0 4px rgba(0, 40, 97, 0.15);
+}
+
+.signin-btn {
+  margin-top: 1rem;
+  padding: 14px;
+  background: linear-gradient(90deg, #002861, #3672d5);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signin-btn:hover {
+  background: linear-gradient(90deg, #3672d5, #002861);
+  transform: translateY(-3px);
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 40, 97, 0.35);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .signin-box {
+    padding: 50px 30px;
+  }
+
+  .welcome-text {
+    font-size: 22px;
+  }
+
+  .signin-title {
+    font-size: 18px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .signin-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

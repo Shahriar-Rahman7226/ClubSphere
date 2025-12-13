@@ -1,0 +1,163 @@
+:root {
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue-dark: #002861;
+  --blue-mid: #0456a5;
+  --blue-light: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+/* ===== GLOBAL RESET & FIX FOOTER GAP ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Page base */
+.admin-dashboard-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 70%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px; /* for navbar */
+  padding-bottom: 70px; /* space for fixed footer */
+  overflow-x: hidden;
+}
+
+/* Dashboard container */
+.admin-dashboard-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  text-align: center;
+}
+
+.welcome-section h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ff914d;
+  margin-bottom: 12px;
+}
+
+.welcome-section p {
+  font-size: 1.25rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* Buttons container */
+.admin-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Individual buttons */
+.admin-btn {
+  width: 95%; /* full width with padding */
+  max-width: 500px;
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+}
+
+/* Hover effect */
+.admin-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: #ff914d;
+  color: #002861;
+  border: 2px solid #002861;
+}
+
+/* Specific buttons using shades of blue */
+.club-btn {
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+}
+
+.post-btn {
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+}
+
+.event-btn {
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+}
+
+.member-btn {
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+}
+
+.recruitment-btn {
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+}
+
+/* Footer fixes */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .admin-dashboard-container {
+    max-width: 90%;
+  }
+
+  .admin-btn {
+    font-size: 1.4rem;
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard-container {
+    max-width: 95%;
+  }
+
+  .admin-btn {
+    font-size: 1.3rem;
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 14px 0;
+  }
+}

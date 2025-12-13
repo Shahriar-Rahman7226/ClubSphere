@@ -1,0 +1,145 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --blue: #3672d5;
+  --green: #045600;
+  --red: #ff4d4d;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+.admin-membership-page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+.admin-membership-page footer{
+  margin-top: auto;
+}
+
+.membership-filter-bar{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 40px 0 20px;
+  flex-wrap: wrap;
+}
+
+.membership-filter-btn{
+  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 2px solid var(--blue);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.membership-filter-btn.active{
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.membership-filter-btn:hover{
+  transform: translateY(-2px);
+}
+
+.membership-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 60px;
+}
+
+.membership-title{
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.membership-card{
+  width: 95%;
+  max-width: 1200px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 26px rgba(2,8,30,0.07);
+  position: relative;
+  border-left: 6px solid var(--orange);
+  transition: 0.2s;
+}
+
+.membership-card:hover{
+  transform: translateY(-5px);
+}
+
+.membership-name{
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.membership-info{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1.05rem;
+  color: var(--black);
+}
+
+.membership-status{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.membership-status.current{
+  background-color: var(--green);
+}
+
+.membership-status.pending{
+  background-color: var(--blue);
+}
+
+.membership-status.former{
+  background-color: #777;
+}
+
+.membership-status.rejected{
+  background-color: var(--red);
+}
+
+@media (max-width: 720px){
+  .membership-title{
+    font-size: 2rem;
+  }
+
+  .membership-card{
+    padding: 22px 18px;
+  }
+
+  .membership-name{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 420px){
+  .membership-filter-btn{
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+}

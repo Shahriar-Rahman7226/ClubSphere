@@ -1,0 +1,139 @@
+:root{
+  --orange: #ff914d;
+  --navy:   #002861;
+  --green:  #045600;
+  --blue:   #3672d5;
+  --white:  #ffffff;
+  --black:  #000000;
+  --surface: #f6f9ff;
+  --post-bg: #eef6ff;
+}
+
+/* Page base */
+.admin-post-page{
+  width:100%;
+  min-height:100vh;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+/* Create Post Button */
+.create-post-container{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.create-post-button{
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem; 
+  border-radius: 10px;
+  font-size: 1.4rem; 
+  font-weight: bold;
+  cursor: pointer;
+  width: 10%;
+  transition: 0.3s all;
+  margin-top: 2%;
+}
+
+.create-post-btn:hover{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Posts Section */
+.admin-post-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.admin-post-title{
+  text-align:center;
+  color: var(--navy);
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+/* Post Card */
+.admin-post-card{
+  width: 95%; 
+  max-width: 1200px; 
+  background: var(--post-bg);
+  border-radius: 18px;
+  padding: 30px 22px 22px 22px;
+  box-shadow: 0 10px 26px rgba(2,8,30,0.07);
+  border-left: 6px solid #ff914d;
+  transition: 0.2s;
+  position: relative; 
+}
+
+.admin-post-card:hover{
+  transform: translateY(-6px);
+}
+
+/* Post Title */
+.admin-post-heading{
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+/* Post Description */
+.admin-post-description{
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+/* Audience Tag */
+.admin-post-audience{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  background-color: #045600;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .admin-post-card{
+    width: 94%;
+  }
+}
+
+@media (max-width: 720px){
+  .admin-post-title{
+    font-size: 2rem;
+  }
+  .admin-post-card{
+    width: 96%;
+    padding: 25px 18px 18px 18px;
+  }
+}
+
+@media (max-width: 420px){
+  .admin-post-title{
+    font-size: 1.7rem;
+  }
+  .admin-post-card{
+    width: 98%;
+  }
+  .create-post-btn{
+    font-size: 1.2rem;
+    padding: 0.9rem 2rem;
+  }
+}

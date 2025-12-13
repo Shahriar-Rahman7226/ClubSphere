@@ -1,0 +1,183 @@
+/* ===========================
+   club_homepage.css
+   ClubSphere Theme
+   Colors:
+   #ff914d, #002861, #045600, #3672d5
+   =========================== */
+
+:root{
+  --orange: #ff914d;
+  --navy:   #002861;
+  --green:  #045600;
+  --blue:   #3672d5;
+  --white:  #ffffff;
+  --black:  #000000;
+  --surface: #f6f9ff;
+  --post-bg: #eef6ff;
+}
+
+/* Page base */
+.club-homepage{
+  width:100%;
+  min-height:100vh;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+
+/* ===========================
+   CLUB POSTS SECTION
+   =========================== */
+
+.club-post-section{
+  margin-top: 40px;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.club-post-title{
+  text-align:center;
+  color: var(--navy);
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* Post Card */
+.club-post-card{
+  width: 90%;
+  max-width: 1200px;
+  background: var(--post-bg);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 26px rgba(2,8,30,0.07);
+  border-left: 6px solid var(--orange);
+  transition: 0.2s;
+}
+
+.club-post-card:hover{
+  transform: translateY(-6px);
+}
+
+/* Title */
+.club-post-heading{
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.club-post-user{
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Image */
+.club-post-image{
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+/* Caption */
+.club-post-caption{
+  margin-top: 14px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--black);
+}
+
+/* Like + Reach Out Buttons */
+.club-post-actions{
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+/* Like Button */
+.like-btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 3px solid var(--orange);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--orange);
+  transition: 0.2s;
+}
+
+.like-btn:hover{
+  transform: scale(1.08);
+}
+
+.like-btn.liked{
+  background: var(--orange);
+  color: white;
+}
+
+/* Reach Button */
+.reach-btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 3px solid var(--blue);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--blue);
+}
+
+.reach-btn:hover{
+  transform: scale(1.08);
+  background: rgba(54,114,213,0.15);
+}
+
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1100px){
+  .club-post-card{
+    width: 92%;
+  }
+}
+
+@media (max-width: 720px){
+  .club-post-title{
+    font-size: 2rem;
+  }
+  .club-post-card{
+    width: 94%;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px){
+  .club-post-title{
+    font-size: 1.7rem;
+  }
+  .club-post-card{
+    width: 95%;
+  }
+  .club-post-actions button{
+    width: 44px;
+    height: 44px;
+  }
+}

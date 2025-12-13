@@ -1,0 +1,136 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+.create-recruitment-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+.create-recruitment-card {
+  width: 900px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 40px 48px;
+  box-shadow: 0 12px 30px rgba(2,8,30,0.08);
+}
+
+.create-recruitment-title {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 900;
+  margin-bottom: 28px;
+  color: var(--navy);
+}
+
+.create-recruitment-form .form-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.create-recruitment-form label {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.create-recruitment-form input[type="text"],
+.create-recruitment-form input[type="date"],
+.create-recruitment-form input[type="url"],
+.create-recruitment-form textarea {
+  width: 90%;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.create-recruitment-form textarea {
+  resize: vertical;
+}
+
+/* Submit button */
+.create-recruitment-btn {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-recruitment-btn:hover {
+  transform: scale(1.04);
+  background: #3672d5;
+}
+
+.create-recruitment-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .create-recruitment-card {
+    width: 95%;
+    padding: 32px 36px;
+  }
+
+  .create-recruitment-form input[type="text"],
+  .create-recruitment-form input[type="date"],
+  .create-recruitment-form input[type="url"],
+  .create-recruitment-form textarea {
+    width: 95%;
+  }
+}
+
+@media (max-width: 720px){
+  .create-recruitment-card {
+    width: 100%;
+    padding: 28px 24px;
+  }
+
+  .create-recruitment-title {
+    font-size: 2.3rem;
+  }
+
+  .create-recruitment-form input[type="text"],
+  .create-recruitment-form input[type="date"],
+  .create-recruitment-form input[type="url"],
+  .create-recruitment-form textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px){
+  .create-recruitment-title {
+    font-size: 2rem;
+  }
+
+  .create-recruitment-form input[type="text"],
+  .create-recruitment-form input[type="date"],
+  .create-recruitment-form input[type="url"],
+  .create-recruitment-form textarea {
+    width: 100%;
+  }
+}

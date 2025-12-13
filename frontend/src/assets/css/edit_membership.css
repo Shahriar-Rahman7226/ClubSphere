@@ -1,0 +1,118 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+/* PAGE */
+.edit-membership-page{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+/* CARD */
+.edit-membership-card{
+  width: 800px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 40px 48px;
+  box-shadow: 0 12px 30px rgba(2,8,30,0.08);
+}
+
+/* TITLE */
+.edit-membership-title{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.edit-membership-form .form-group{
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-membership-form label{
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.edit-membership-form input,
+.edit-membership-form select{
+  width: 100%;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+/* BUTTONS */
+.edit-membership-buttons{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.save-btn{
+  flex: 1;
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 16px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cancel-btn{
+  flex: 1;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 16px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-btn:hover,
+.cancel-btn:hover{
+  transform: scale(1.04);
+}
+
+.save-btn.disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+  .edit-membership-card{
+    width: 95%;
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 420px){
+  .edit-membership-title{
+    font-size: 2rem;
+  }
+}

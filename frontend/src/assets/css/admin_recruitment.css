@@ -1,0 +1,173 @@
+:root{
+  --orange: #ff914d;
+  --navy:   #002861;
+  --green:  #045600;
+  --blue:   #3672d5;
+  --white:  #ffffff;
+  --black:  #000000;
+  --surface: #f6f9ff;
+  --rec-bg: #eef6ff;
+}
+
+.admin-recruitment-page{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+.admin-recruitment-page footer{
+  margin-top: auto;
+}
+
+.create-recruitment-container{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.create-recruitment-button{
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-recruitment-button:hover{
+  background-color: var(--blue);
+}
+
+/* =========================
+   FILTERS
+   ========================= */
+
+.recruitment-filters{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.filter-btn{
+  padding: 10px 26px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 2px solid var(--navy);
+  background-color: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filter-btn.active{
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.filter-btn:hover{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* =========================
+   RECRUITMENT SECTION
+   ========================= */
+
+.admin-recruitment-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+/* =========================
+   RECRUITMENT CARD
+   ========================= */
+
+.admin-recruitment-card{
+  width: 95%;
+  max-width: 1200px;
+  background: var(--rec-bg);
+  border-radius: 18px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 26px rgba(2,8,30,0.07);
+  border-left: 6px solid var(--orange);
+  transition: 0.2s;
+}
+
+.admin-recruitment-card:hover{
+  transform: translateY(-6px);
+}
+
+/* Title */
+.admin-recruitment-heading{
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+
+/* Description */
+.admin-recruitment-description{
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  color: var(--black);
+}
+
+/* Meta info */
+.admin-recruitment-meta{
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.meta-item strong{
+  color: var(--navy);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1100px){
+  .admin-recruitment-card{
+    width: 94%;
+  }
+}
+
+@media (max-width: 720px){
+  .admin-recruitment-card{
+    width: 96%;
+    padding: 24px 18px;
+  }
+
+  .create-recruitment-button{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 420px){
+  .admin-recruitment-card{
+    width: 98%;
+  }
+
+  .filter-btn{
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}

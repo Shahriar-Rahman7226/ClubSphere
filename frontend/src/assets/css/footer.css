@@ -1,0 +1,141 @@
+/* ==========================================
+   ADMIN FOOTER STYLES — UPDATED COLORS
+========================================== */
+.admin_footer {
+   background: #002861;
+  color: #ffffff;
+  padding: 60px 8% 20px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin_footer a {
+  color: #ff914d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.admin_footer a:hover {
+  color: #ffffff;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.admin_footer_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 40px;
+}
+
+/* ===== LEFT SIDE ===== */
+.admin_footer_left {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ===== CONTACT & LINKS ===== */
+.admin_footer_info {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.admin_footer_contact h4,
+.admin_footer_links h4 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ff914d;
+  letter-spacing: 0.3px;
+}
+
+.admin_footer_contact p,
+.admin_footer_links ul li {
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.85;
+  padding-bottom: 10px;
+}
+
+.admin_footer_links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin_footer_links li {
+  margin-bottom: 5px;
+}
+
+.admin_footer_links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===== RIGHT SIDE ===== */
+.admin_footer_right {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.admin_footer_social_heading {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #ff914d;
+  font-weight: 500;
+}
+
+.admin_footer_socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.admin_footer_socials a {
+  font-size: 1.5rem;
+  background: #ff914d;
+  color: #002861;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.admin_footer_socials a:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ===== COPYRIGHT SECTION ===== */
+.admin_footer_bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .admin_footer_container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin_footer_left,
+  .admin_footer_right {
+    width: 100%;
+  }
+
+  .admin_footer_info {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .admin_footer_socials a {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,158 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+.create-event-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+.create-event-card {
+  width: 950px; /* increased width */
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 48px 56px; /* increased padding */
+  box-shadow: 0 12px 30px rgba(2,8,30,0.08);
+}
+
+.create-event-title {
+  text-align: center;
+  font-size: 2.8rem; /* increased font size */
+  font-weight: 900;
+  margin-bottom: 28px;
+  color: var(--navy);
+}
+
+.create-event-form .form-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.create-event-form label {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.35rem; /* increased font size */
+  color: var(--navy);
+}
+
+.create-event-form input[type="text"],
+.create-event-form input[type="url"],
+.create-event-form input[type="date"],
+.create-event-form input[type="time"],
+.create-event-form textarea,
+.create-event-form select {
+  width: 90%;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 1.25rem; /* slightly larger font */
+  outline: none;
+}
+
+.create-event-form textarea {
+  resize: vertical;
+}
+
+/* Stylish file input */
+.file-input-wrapper {
+  position: relative;
+  width: 90%;
+  height: 50px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-label {
+  font-size: 1.15rem;
+  color: #333333; /* slightly dark text */
+  z-index: 1;
+}
+
+/* Submit button */
+.create-event-btn {
+  width: 100%;
+  padding: 18px 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-event-btn:hover {
+  transform: scale(1.04);
+  background: #3672d5;
+}
+
+.create-event-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .create-event-card {
+    width: 95%;
+    padding: 36px 40px;
+  }
+
+  .create-event-form input,
+  .create-event-form select,
+  .create-event-form textarea,
+  .file-input-wrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 720px){
+  .create-event-card {
+    width: 100%;
+    padding: 32px 28px;
+  }
+
+  .create-event-title {
+    font-size: 2.4rem;
+  }
+
+  .create-event-form input,
+  .create-event-form select,
+  .create-event-form textarea,
+  .file-input-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px){
+  .create-event-title {
+    font-size: 2rem;
+  }
+}

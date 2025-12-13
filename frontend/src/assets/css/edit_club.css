@@ -1,0 +1,183 @@
+:root{
+  --orange: #ff914d;
+  --navy: #002861;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+/* =========================
+   PAGE BASE (FOOTER SAFE)
+   ========================= */
+
+.club-management-page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+.club-management-page footer{
+  margin-top: auto;
+}
+
+/* =========================
+   CARD
+   ========================= */
+
+.club-management-card{
+  width: 900px;
+  max-width: 95%;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 40px 48px;
+  margin: 60px auto;
+  box-shadow: 0 12px 30px rgba(2,8,30,0.08);
+}
+
+.club-management-title{
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.club-management-form .form-group{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.club-management-form label{
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.club-management-form input[type="text"],
+.club-management-form input[type="email"],
+.club-management-form textarea{
+  width: 90%;
+  padding: 16px 18px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--blue);
+  outline: none;
+}
+
+.club-management-form textarea{
+  resize: vertical;
+}
+
+/* =========================
+   FILE UPLOAD
+   ========================= */
+
+.file-upload-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.file-upload-wrapper input[type="file"]{
+  display: none;
+}
+
+.file-upload-btn{
+  background: linear-gradient(90deg, #3672d5, #ff914d);
+  color: var(--navy);
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.file-upload-btn:hover{
+  background: linear-gradient(90deg, #ff914d, #3672d5);
+  transform: translateY(-3px);
+}
+
+.file-name{
+  font-size: 0.95rem;
+  color: #444;
+  max-width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.club-management-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+
+.save-btn{
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 16px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  width: 48%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cancel-btn{
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 16px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  width: 48%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-btn:hover,
+.cancel-btn:hover{
+  transform: scale(1.04);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px){
+  .club-management-form input,
+  .club-management-form textarea{
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px){
+  .club-management-title{
+    font-size: 2.2rem;
+  }
+
+  .club-management-buttons{
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .save-btn,
+  .cancel-btn{
+    width: 100%;
+  }
+}

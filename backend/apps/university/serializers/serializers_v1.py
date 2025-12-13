@@ -10,7 +10,7 @@ exclude_list = [
 
 
 class UniversitySerializer(ModelSerializer):
-    
+
     class Meta:
         model = University
-        fields = ['title', 'email_domain', 'logo']
+        fields = ['id', 'title', 'email_domain', 'logo']

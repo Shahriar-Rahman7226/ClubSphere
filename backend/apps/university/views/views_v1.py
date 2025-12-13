@@ -22,7 +22,7 @@ class UniversityViewSet(ModelViewSet):
     @extend_schema(
         examples=[
             OpenApiExample(
-                "Create Club",
+                "Create University",
                 value={
                 "title": "string",
                 "email_domain": "@example.com",

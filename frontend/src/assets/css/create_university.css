@@ -1,0 +1,174 @@
+:root {
+  --orange: #ff914d;
+  --blue: #3672d5;
+  --navy: #002861;
+  --white: #ffffff;
+  --surface: #f6f9ff;
+  --tile-bg: #eef6ff;
+}
+
+.university-page {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+}
+
+.university-card {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 50px 40px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  box-shadow: 0 12px 30px rgba(2, 8, 30, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content */
+}
+
+.university-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 30px;
+}
+
+.university-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.university-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  width: 80%; /* make the form inputs 80% of card width */
+}
+
+.university-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 1.2rem;
+}
+
+.university-form input[type="text"],
+.university-form input[type="file"] {
+  width: 100%; /* full width of form-group */
+  padding: 16px 18px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--blue);
+  outline: none;
+  background-color: #f7fbff; /* simple light box */
+  transition: 0.3s;
+}
+
+.university-form input[type="text"]:focus,
+.university-form input[type="file"]:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 4px rgba(0, 40, 97, 0.1);
+}
+
+.choose-file-btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  /* background: linear-gradient(90deg, #3672d5, #ff914d); */
+  color: #002861;
+  transition: 0.3s;
+  margin-top: 10px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.choose-file-btn:hover {
+  /* background: linear-gradient(90deg, #ff914d, #3672d5); */
+  transform: translateY(-3px);
+  color: #002861;
+}
+
+.save-btn {
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.save-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 25px;
+}
+
+.university-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.university-tile {
+  background: var(--tile-bg);
+  padding: 20px 26px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: 0 10px 25px rgba(2, 8, 30, 0.08);
+  transition: 0.2s;
+  cursor: default;
+}
+
+.university-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(2, 8, 30, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .university-card,
+  .university-list {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .university-title,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .university-form input[type="text"],
+  .choose-file-btn,
+  .save-btn {
+    font-size: 1rem;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  .university-tile {
+    font-size: 1.1rem;
+    padding: 16px 20px;
+  }
+}

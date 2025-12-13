@@ -1,0 +1,147 @@
+:root {
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue-dark: #002861;
+  --blue-mid: #0456a5;
+  --blue-light: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+.about-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 70%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+  padding: 60px 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-section {
+  background: #eef6ff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(2, 8, 30, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.main-info h2 {
+  color: var(--orange);
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.main-info p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--navy);
+}
+
+.founders-section h2 {
+  color: var(--orange);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+
+.founders-list {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(2, 8, 30, 0.08);
+  width: 250px;
+  min-height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(2, 8, 30, 0.15);
+}
+
+.founder-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--orange);
+}
+
+.founder-name {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--blue);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .founders-list {
+    gap: 60px;
+  }
+
+  .about-section {
+    padding: 40px 30px;
+  }
+
+  .founder-card img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founders-list {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .founder-card img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 25px 15px;
+  }
+}

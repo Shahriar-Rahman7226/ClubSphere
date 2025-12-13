@@ -1,0 +1,165 @@
+/* ====== Hero Section ====== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* ↓ decreased from 100vh */
+  overflow: hidden;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: transform 0.5s ease;
+}
+
+/* Banner Hover Effect */
+.hero:hover .hero-banner {
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* ====== Overlay ====== */
+.hero-overlay {
+  position: absolute;
+  top: 80%; /* slightly adjusted for shorter hero */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  z-index: 10;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== Buttons ====== */
+.hero-buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  border-radius: 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.25s ease;
+  width: 230px; /* ← Same width for all three buttons */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* EVENTS BUTTON — ORANGE */
+.events-btn {
+  background-color: #ff914d;
+  color: #002861;
+  border-color: #002861;
+}
+
+.events-btn:hover {
+  background-color: #ffffff;
+  color: #ff914d;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* PROFILE BUTTON — BLUE */
+.profile-btn {
+  background-color: #3672d5;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.profile-btn:hover {
+  background-color: #ffffff;
+  color: #3672d5;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* MEMBERSHIP BUTTON — GREEN */
+.membership-btn {
+  background-color: #045600;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.membership-btn:hover {
+  background-color: #ffffff;
+  color: #045600;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    width: 200px; /* responsive width */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* decreased proportionally */
+  }
+
+  .hero-overlay {
+    top: 68%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btn {
+    width: 75%; /* 75% of screen */
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    width: 85%; /* more responsive */
+  }
+}
