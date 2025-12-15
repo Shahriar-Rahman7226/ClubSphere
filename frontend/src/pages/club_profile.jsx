@@ -6,7 +6,7 @@ import React from "react";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
 import "../assets/css/club_profile.css";
-import advisorImg from "../assets/images/faculty/faculty.png"; // replace with real image
+import advisorImg from "../assets/images/faculty/faculty.webp"; // replace with real image
 
 const ClubProfile = () => {
   return (

@@ -29,7 +29,7 @@ import Setup from "./pages/clubsphere_setup";
 import CreateUniversity from "./pages/create_university";
 import SuperAdminDashboard from './pages/super_admin_dashboard';
 import EditUniversity from "./pages/edit_university";
-import SuperAdminSignUp from "./pages/superadmin_signup";
+import SuperAdminSignUp from "./pages/super_admin_signup";
 import CreateClub from "./pages/create_club";
 import AdminSignUp from "./pages/admin_signup";
 import EventManagement from "./pages/event_management";
@@ -75,7 +75,7 @@ function App() {
                                             <Route path="/create_university" element={<CreateUniversity />} />
                                              <Route path="/super_admin_dashboard" element={<SuperAdminDashboard />} />
                                               <Route path="/edit_university" element={<EditUniversity />} />
-                                              <Route path="/superadmin_signup" element={<SuperAdminSignUp />} />
+                                              <Route path="/super_admin_signup" element={<SuperAdminSignUp />} />
                                                       <Route path="/create_club" element={<CreateClub />} />
                                                        <Route path="/admin_signup" element={<AdminSignUp />} />
                                                           <Route path="/event_management" element={<EventManagement />} />

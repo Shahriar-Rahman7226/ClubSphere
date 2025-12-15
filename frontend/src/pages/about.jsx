@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/about.css";
-import shahriar from "../assets/images/faculty/faculty.png";
-import shafil from "../assets/images/faculty/faculty.png";
+import shahriar from "../assets/images/faculty/faculty.webp";
+import shafil from "../assets/images/faculty/faculty.webp";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
 

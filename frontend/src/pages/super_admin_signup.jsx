@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../assets/css/signup.css";
+import { useNavigate } from "react-router-dom";
+import "../assets/css/super_admin_signup.css";
 import logo from "../assets/images/logo/logo.png"; 
 import api from "../api/api"; 
 
@@ -23,6 +24,7 @@ const BLOOD_GROUP_OPTIONS = [
 ];
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     university: "",
     first_name: "",
@@ -45,18 +47,16 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-     const fetchUniversities = async () => {
-    try {
-      const response = await api.get("university/university/");
-      const data = response.data; // NOT response.data.results
-        console.log("API response:", data);
-      setUniversities(data);
-    } catch (error) {
-      console.error("Failed to fetch universities:", error.response || error.message);
-    }
-  };
-  fetchUniversities();
-}, []);
+    const fetchUniversities = async () => {
+      try {
+        const response = await api.get("university/university/");
+        setUniversities(response.data);
+      } catch (error) {
+        console.error("Failed to fetch universities:", error.response || error.message);
+      }
+    };
+    fetchUniversities();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -82,10 +82,9 @@ const Signup = () => {
 
     setLoading(true);
     try {
-      const response = await api.post("users/user-registration/", data, {
+      const response = await api.post("users/create-super-admin/", data, {
         headers: { "Content-Type": "multipart/form-data" }, 
       });
-      console.log("Success:", response.data);
       alert("Account created successfully!");
       setFormData({
         university: "",
@@ -104,6 +103,8 @@ const Signup = () => {
         password: "",
         confirm_password: "",
       });
+
+      navigate("/signin"); // Redirect to Sign In page after successful signup
     } catch (error) {
       console.error("Error:", error.response?.data || error.message);
       alert(
@@ -120,12 +121,8 @@ const Signup = () => {
       <div className="signup-card">
         <img src={logo} alt="Logo" className="signup-logo" />
         <h2 className="signup-title">Create Your Account</h2>
-        <p className="signup-subtitle">
-          Join ClubSphere — Your campus club life, all in one sphere.
-        </p>
 
         <form className="signup-form" onSubmit={handleSubmit}>
-          {/* University */}
           <div className="form-group">
             <label htmlFor="university">University <span className="required">*</span></label>
             <select
@@ -134,7 +131,7 @@ const Signup = () => {
               value={formData.university}
               onChange={handleChange}
               required
-              style={{ color: "#002861" }} // ensure text visible
+              style={{ color: "#002861" }}
             >
               <option value="">Select University</option>
               {universities.map((uni) => (
@@ -145,7 +142,6 @@ const Signup = () => {
             </select>
           </div>
 
-          {/* Row: First & Last Name */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="first_name">First Name <span className="required">*</span></label>
@@ -171,7 +167,6 @@ const Signup = () => {
             </div>
           </div>
 
-          {/* Institution ID */}
           <div className="form-group">
             <label htmlFor="institution_id">Institution ID <span className="required">*</span></label>
             <input
@@ -184,7 +179,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Row: Email & Additional Email */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="email">Email Address <span className="required">*</span></label>
@@ -211,7 +205,6 @@ const Signup = () => {
             </div>
           </div>
 
-          {/* Phone Number */}
           <div className="form-group">
             <label htmlFor="phone_number">Phone Number</label>
             <input
@@ -223,7 +216,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Department */}
           <div className="form-group">
             <label htmlFor="department">Department <span className="required">*</span></label>
             <input
@@ -236,7 +228,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Description */}
           <div className="form-group">
             <label htmlFor="description">Description</label>
             <textarea
@@ -249,7 +240,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Date of Birth */}
           <div className="form-group">
             <label htmlFor="DOB">Date of Birth</label>
             <input
@@ -261,7 +251,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Profile Image */}
           <div className="form-group">
             <label htmlFor="profile_image">Profile Image</label>
             <div className="profile-image-box">
@@ -273,14 +262,11 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <span className="file-label">
-                {formData.profile_image
-                  ? formData.profile_image.name
-                  : "Choose File"}
+                {formData.profile_image ? formData.profile_image.name : "Choose File"}
               </span>
             </div>
           </div>
 
-          {/* Gender */}
           <div className="form-group">
             <label htmlFor="gender">Gender</label>
             <select
@@ -297,9 +283,8 @@ const Signup = () => {
             </select>
           </div>
 
-          {/* Blood Group */}
           <div className="form-group">
-            <label htmlFor="blood_group">Blood Group </label>
+            <label htmlFor="blood_group">Blood Group</label>
             <select
               id="blood_group"
               name="blood_group"
@@ -314,7 +299,6 @@ const Signup = () => {
             </select>
           </div>
 
-          {/* Password */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="password">Password <span className="required">*</span></label>
@@ -342,7 +326,6 @@ const Signup = () => {
             </div>
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             className={`signup-button ${loading ? "disabled" : ""}`}
