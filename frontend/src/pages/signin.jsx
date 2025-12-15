@@ -1,66 +1,71 @@
-import React, { useState } from "react";
-import "../assets/css/signin.css";
-import logo from "../assets/images/logo/logo.png"; // update to your correct logo path
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../api/api"; // axios instance like in Signup.jsx
+import "../assets/css/signin.css";
+import logo from "../assets/images/logo/logo.png"; // update path if needed
+import api from "../api/api";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  // Optional: Prevent back button navigation after sign in
+  useEffect(() => {
+    window.history.pushState(null, document.title, window.location.href);
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, []);
+
+  const handleBackButton = (e) => {
+    window.history.pushState(null, document.title, window.location.href);
+  };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     try {
       // Step 1: Login
       const response = await api.post("authentication/login/", formData);
-      console.log("Login response:", response.data);
+      const { access, refresh, user_id } = response.data;
+
+      if (!user_id) throw new Error("User ID not returned from backend.");
 
       // Save tokens
-      localStorage.setItem("accessToken", response.data.access);
-      localStorage.setItem("refreshToken", response.data.refresh);
+      localStorage.setItem("accessToken", access);
+      localStorage.setItem("refreshToken", refresh);
 
-      const userId = response.data.user_id;
-      if (!userId) throw new Error("User ID not returned from backend.");
-
-      // Step 2: Fetch user entity to get user_role
-      const userResponse = await api.get(`users/user-registration/${userId}/`, {
-        headers: {
-          Authorization: `Bearer ${response.data.access}`,
-        },
+      // Step 2: Fetch user to get role
+      const userResponse = await api.get(`users/user-registration/${user_id}/`, {
+        headers: { Authorization: `Bearer ${access}` },
       });
 
-      const userRole = userResponse.data.user_role;
-      console.log("User role:", userRole);
+      const userRole = userResponse.data.user_role.toLowerCase();
 
-      // Step 3: Navigate based on role
-      if (userRole === "super_admin") {
-        navigate("/super_admin_dashboard");
-      } else if (userRole === "admin") {
-        navigate("/admin_dashboard");
-      } else {
-        navigate("/student_dashboard");
-      }
+      // Save user info locally if needed
+      localStorage.setItem("userRole", userRole);
+      localStorage.setItem("userName", userResponse.data.first_name);
 
-      alert(response.data.detail || "Login successful!");
-    } catch (error) {
-      console.error("Login error full:", error);
-      alert(
-        error.response?.data?.message ||
-        error.response?.data?.detail ||
-        error.message ||
+      // Step 3: Navigate based on role and prevent back navigation
+      if (userRole === "super_admin") navigate("/super_admin_dashboard", { replace: true });
+      else if (userRole === "admin") navigate("/admin_dashboard", { replace: true });
+      else navigate("/student_dashboard", { replace: true });
+
+    } catch (err) {
+      console.error("Login error:", err);
+      setError(
+        err.response?.data?.message ||
+        err.response?.data?.detail ||
+        err.message ||
         "Login failed. Please check your email and password."
       );
     } finally {
@@ -75,6 +80,8 @@ const SignIn = () => {
           <img src={logo} alt="ClubSphere Logo" className="signin-logo" />
           <h1 className="welcome-text">Welcome to ClubSphere</h1>
           <h2 className="signin-title">Sign In to Continue</h2>
+
+          {error && <p className="error-text">{error}</p>}
 
           <form className="signin-form" onSubmit={handleSubmit}>
             <div className="input-group">
@@ -103,7 +110,11 @@ const SignIn = () => {
               />
             </div>
 
-            <button type="submit" className="signin-btn" disabled={loading}>
+            <button
+              type="submit"
+              className="signin-btn"
+              disabled={loading}
+            >
               {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
@@ -112,8 +123,9 @@ const SignIn = () => {
             <p>
               Haven’t registered yet?{" "}
               <button
+                type="button"
                 className="signup-link"
-                onClick={() => navigate("/signup")}
+                onClick={() => navigate("/signup", { replace: true })}
               >
                 Sign Up
               </button>

@@ -2,35 +2,40 @@ import React, { useState } from "react";
 import "../assets/css/navbar.css";
 import logo from "../assets/images/logo/logo.png";
 import { FaBell, FaUserCircle } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const AdminNavbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
 
   // Dynamically decide home link based on current role path
   let homeLink = "/"; // default fallback
-  if (location.pathname.startsWith("/admin")) homeLink = "/super_admin";
-  else if (location.pathname.startsWith("/tutor")) homeLink = "/admin";
-  else if (location.pathname.startsWith("/student")) homeLink = "/student";
+  if (location.pathname.startsWith("/admin")) homeLink = "/super_admin_dashboard";
+  else if (location.pathname.startsWith("/tutor")) homeLink = "/admin_dashboard";
+  else if (location.pathname.startsWith("/student")) homeLink = "/student_dashboard";
 
   // Dummy clubs
   const clubs = [
-    { id: 1, name: "Coding Club", link: "/clubs/1" },
-    { id: 2, name: "Art Club", link: "/clubs/2" },
-    { id: 3, name: "Music Club", link: "/clubs/3" },
-    { id: 4, name: "Debate Club", link: "/clubs/4" },
-    { id: 5, name: "Drama Club", link: "/clubs/5" },
-    { id: 6, name: "Robotics Club", link: "/clubs/6" },
+    { id: 1, name: "Coding Club", link: "/club_homepage" },
+    { id: 2, name: "Art Club", link: "/club_homepage" },
+    { id: 3, name: "Music Club", link: "/club_homepage" },
+    { id: 4, name: "Debate Club", link: "/club_homepage" },
+    { id: 5, name: "Drama Club", link: "/club_homepage" },
+    { id: 6, name: "Robotics Club", link: "/club_homepage" },
   ];
 
   return (
     <>
       <nav className="admin_navbar">
         <div className="admin_navbar_left">
-          <Link to={homeLink}>
-            <img src={logo} alt="Logo" className="admin_navbar_logo" />
-          </Link>
+          <img
+            src={logo}
+            alt="Logo"
+            className="admin_navbar_logo"
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate(-1)}
+          />
         </div>
 
         <div className="admin_navbar_center">
@@ -65,9 +70,11 @@ const AdminNavbar = () => {
         </div>
 
         <div className="admin_navbar_right">
-          <FaBell className="admin_navbar_icon" title="Notifications" />
+          <FaBell className="admin_navbar_icon" 
+          title="Notifications" />
           <FaUserCircle
             className="admin_profile_icon"
+             onClick={() => navigate("/edit_profile")}
             title="Profile"
             size={36}
           />

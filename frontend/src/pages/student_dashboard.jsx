@@ -1,5 +1,5 @@
-// ================= UPDATED student-dashboard.jsx =================
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import banner from "../assets/images/banner/banner.png";
 import club from "../assets/images/clubs/club.png";
 import post from "../assets/images/posts/post.jpg";
@@ -44,6 +44,7 @@ const dummyPosts = [
 
 const StudentDashboard = () => {
   const sliderRef = useRef(null);
+  const navigate = useNavigate();
   const [showArrows, setShowArrows] = useState(false);
   const [likedPosts, setLikedPosts] = useState([]);
 
@@ -91,9 +92,6 @@ const StudentDashboard = () => {
         <div className="hero-overlay-student">
           <img src={club} alt="Hero Logo" />
           <h1>Welcome Shahriar!</h1>
-          {/* <p className="hero-tagline">
-            Stay updated with clubs, events & campus news ✨
-          </p> */}
         </div>
       </section>
 
@@ -113,7 +111,12 @@ const StudentDashboard = () => {
 
           <div className="club-slider" ref={sliderRef}>
             {clubs.map((c) => (
-              <div className="club-card" key={c.id}>
+              <div
+                className="club-card"
+                key={c.id}
+                onClick={() => navigate("/club_homepage")}
+                style={{ cursor: "pointer" }}
+              >
                 <img src={c.img} alt={c.name} />
                 <p className="club-name">{c.name}</p>
               </div>

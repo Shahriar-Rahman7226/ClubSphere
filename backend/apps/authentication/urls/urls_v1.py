@@ -10,6 +10,7 @@ urlpatterns = [
 
     # Login & Logout
     path("login/", LoginViewSet.as_view({'post': 'create'}), name='login'),
+     path("superadmin-login/", LoginViewSet.as_view({'post': 'superadmin_login'}), name="superadmin_login"),
     path("logout/", LogoutViewSet.as_view({'post': 'create'}), name='logout'),
 
     # Reset Password

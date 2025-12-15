@@ -18,7 +18,7 @@ html, body {
   overflow-x: hidden;
 }
 
-.admin-dashboard-page {
+.admin-dashboard-wrapper {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(180deg, #fff3b0, #ffffff 70%);
@@ -29,10 +29,9 @@ html, body {
   align-items: center;
   padding-top: 120px;
   padding-bottom: 70px;
-  overflow-x: hidden;
 }
 
-.admin-dashboard-container {
+.dashboard-container {
   width: 100%;
   max-width: 900px;
   display: flex;
@@ -42,24 +41,24 @@ html, body {
   margin-bottom: 200px;
 }
 
-.welcome-section {
+.dashboard-welcome {
   text-align: center;
 }
 
-.welcome-section h1 {
+.dashboard-welcome h1 {
   font-size: 2.6rem;
   font-weight: 800;
-  color: #ff914d;
+  color: var(--orange);
   margin-bottom: 12px;
 }
 
-.welcome-section p {
+.dashboard-welcome p {
   font-size: 1.25rem;
   color: var(--navy);
   font-weight: 500;
 }
 
-.admin-buttons-container {
+.dashboard-buttons {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -67,8 +66,8 @@ html, body {
   align-items: center;
 }
 
-.admin-btn {
-  width: 95%;
+.dashboard-btn {
+  width: 500px; /* fixed uniform width */
   max-width: 500px;
   padding: 20px 0;
   font-size: 1.5rem;
@@ -78,36 +77,24 @@ html, body {
   color: var(--white);
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
   background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
 }
 
-.admin-btn:hover {
+.dashboard-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  background: #ff914d;
-  color:#002861;
-  border: 2px solid #002861;
+  background: var(--orange);
+  color: var(--navy);
+  border: 2px solid var(--navy);
 }
 
-.club-btn {
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
-}
-
-.post-btn {
-  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
-}
-
-.event-btn {
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
-}
-
-.member-btn {
-  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
-}
-
-.recruitment-btn {
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
-}
+/* Individual button gradients */
+.club-management { background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid)); }
+.post-management { background: linear-gradient(90deg, var(--blue-mid), var(--blue-light)); }
+.event-management { background: linear-gradient(90deg, var(--blue-dark), var(--blue-light)); }
+.member-management { background: linear-gradient(90deg, var(--blue-mid), var(--blue-light)); }
+.recruitment-management { background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid)); }
 
 footer {
   position: fixed;
@@ -122,32 +109,17 @@ footer {
   z-index: 9999;
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
-  .admin-dashboard-container {
-    max-width: 90%;
-  }
-
-  .admin-btn {
-    font-size: 1.4rem;
-    padding: 18px 0;
-  }
+  .dashboard-container { max-width: 90%; }
+  .dashboard-btn { width: 450px; font-size: 1.4rem; padding: 18px 0; }
 }
 
 @media (max-width: 768px) {
-  .admin-dashboard-container {
-    max-width: 95%;
-  }
-
-  .admin-btn {
-    font-size: 1.3rem;
-    padding: 16px 0;
-  }
+  .dashboard-container { max-width: 95%; }
+  .dashboard-btn { width: 400px; font-size: 1.3rem; padding: 16px 0; }
 }
 
 @media (max-width: 480px) {
-  .admin-btn {
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 14px 0;
-  }
+  .dashboard-btn { width: 100%; font-size: 1.2rem; padding: 14px 0; }
 }

@@ -1,7 +1,3 @@
-/* =============================
-   Setup / Sign-In Page Styling
-============================= */
-
 .signin-page {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(120deg, #ff914d, #3672d5, #002861, #045600);
@@ -94,6 +90,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  
 }
 
 .signin-btn:hover {
@@ -109,7 +106,6 @@
   100% { background-position: 0% 50%; }
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 600px) {
   .signin-box {
     padding: 50px 30px;
@@ -132,4 +128,20 @@
     font-size: 15px;
     padding: 12px;
   }
+}
+
+.error-text {
+  color: #d8000c;
+  font-weight: 700;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.success-text {
+  color: #007700;
+  font-weight: 700;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: center;
 }

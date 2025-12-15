@@ -31,9 +31,9 @@ class User(AbstractBaseUser, CustomModel, PermissionsMixin):
     university = models.ForeignKey(University, related_name='user_university', on_delete=models.CASCADE, blank=True, null=True)
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
-    institution_id = models.CharField(max_length=8, blank=True, null=True)
+    institution_id = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(blank=True, null=True, unique=True)
-    additional_email = models.EmailField(blank=True, null=True, unique=True)
+    additional_email = models.EmailField(blank=True, null=True)
     password = models.CharField(max_length=128, blank=True, null=True)
     user_role = models.CharField(max_length=50, blank=True, null=True, choices=USER_ROLES)
 

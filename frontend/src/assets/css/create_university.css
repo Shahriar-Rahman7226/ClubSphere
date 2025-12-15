@@ -11,19 +11,28 @@
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   padding: 40px 20px;
-  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  background: linear-gradient(120deg, #ff914d, #3672d5, #002861, #045600);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .university-card {
-  background: var(--surface);
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
   padding: 50px 40px;
   max-width: 800px;
   margin: 0 auto 40px;
-  box-shadow: 0 12px 30px rgba(2, 8, 30, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 40, 97, 0.25);
   display: flex;
   flex-direction: column;
-  align-items: center; /* center content */
+  align-items: center;
+  backdrop-filter: blur(12px);
 }
 
 .university-title {
@@ -45,7 +54,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
-  width: 80%; /* make the form inputs 80% of card width */
+  width: 80%;
 }
 
 .university-form label {
@@ -57,20 +66,20 @@
 
 .university-form input[type="text"],
 .university-form input[type="file"] {
-  width: 100%; /* full width of form-group */
+  width: 100%;
   padding: 16px 18px;
   font-size: 1.2rem;
   border-radius: 12px;
   border: 2px solid var(--blue);
   outline: none;
-  background-color: #f7fbff; /* simple light box */
+  background-color: #f7fbff;
   transition: 0.3s;
 }
 
 .university-form input[type="text"]:focus,
 .university-form input[type="file"]:focus {
   border-color: var(--navy);
-  box-shadow: 0 0 0 4px rgba(0, 40, 97, 0.1);
+  box-shadow: 0 0 0 4px rgba(0, 40, 97, 0.15);
 }
 
 .choose-file-btn {
@@ -80,7 +89,6 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  /* background: linear-gradient(90deg, #3672d5, #ff914d); */
   color: #002861;
   transition: 0.3s;
   margin-top: 10px;
@@ -89,35 +97,34 @@
 }
 
 .choose-file-btn:hover {
-  /* background: linear-gradient(90deg, #ff914d, #3672d5); */
   transform: translateY(-3px);
-  color: #002861;
 }
 
 .save-btn {
-  background: var(--orange);
-  color: var(--white);
-  font-weight: 700;
+  margin-top: 1rem;
+  min-height: 45px;
   padding: 14px;
-  border-radius: 12px;
+  background: linear-gradient(90deg, #002861, #3672d5);
   border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  width: 50%;
-  font-size: 1.2rem;
-  transition: 0.3s;
-  margin-top: 20px;
+  transition: all 0.3s ease;
 }
 
 .save-btn:hover {
+  background: linear-gradient(90deg, #3672d5, #002861);
   transform: translateY(-3px);
-  background: linear-gradient(90deg, var(--blue), var(--orange));
+  box-shadow: 0 12px 30px rgba(0, 40, 97, 0.35);
 }
 
 .section-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 25px;
 }
 
@@ -139,6 +146,7 @@
   box-shadow: 0 10px 25px rgba(2, 8, 30, 0.08);
   transition: 0.2s;
   cursor: default;
+  text-align: center; /* center text */
 }
 
 .university-tile:hover {

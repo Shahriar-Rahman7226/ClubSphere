@@ -34,6 +34,19 @@ class UniversityViewSet(ModelViewSet):
     )
     @transaction.atomic()
     def create(self, request, *args, **kwargs):
+
+        # @ check in email
+        email_domain = request.data['email_domain']
+        if '@' not in email_domain:
+            return Response({'message': 'Email domain must start with @'}, status=status.HTTP_400_BAD_REQUEST)
+         
+        # University Title Check
+        if self.model_class.objects.filter(title=request.data['title']).first():
+            return Response({'message': 'University name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+        # University Email Domain Check
+        if self.model_class.objects.filter(email_domain=request.data['email_domain']).first():
+            return Response({'message': 'University email domain already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+        
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
@@ -60,6 +73,20 @@ class UniversityViewSet(ModelViewSet):
         instance = self.model_class.objects.filter(id=kwargs['id']).first()
         if not instance:
             return Response({'message': 'Invalid University'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # @ check in email
+        email_domain = request.data['email_domain']
+        if '@' not in email_domain:
+            return Response({'message': 'Email domain must start with @'}, status=status.HTTP_400_BAD_REQUEST)
+            
+        # University Title Check
+        if self.model_class.objects.filter(title=request.data['title']).first():
+            return Response({'message': 'University name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # University Email Domain Check
+        if self.model_class.objects.filter(email_domain=request.data['email_domain']).first():
+            return Response({'message': 'University email domain already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+        
         serializer = self.serializer_class(instance=instance, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()

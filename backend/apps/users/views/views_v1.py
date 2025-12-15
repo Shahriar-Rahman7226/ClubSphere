@@ -50,7 +50,7 @@ class UserResgistrationViewSet(ModelViewSet):
     )
     @transaction.atomic()
     def create(self, request, *args, **kwargs):
-        data = request.data.copy()  # ← make mutable copy
+        data = request.data.copy() 
 
         # email check
         if self.model_class.objects.filter(Q(email=data['email']) | Q(additional_email=data['email'])).first():
@@ -100,7 +100,7 @@ class UserResgistrationViewSet(ModelViewSet):
                 "first_name": "string",
                 "last_name": "string",
                  "institution_id": "string",
-                "email": "string",
+                "email": "string",  
                 "additional_email": "string",
                 "phone_number": "string",
                 "department": "string",
@@ -152,7 +152,6 @@ class UserResgistrationViewSet(ModelViewSet):
                          "Happy networking,\n"
                          "The ClubSphere Team")
             send_email(user_obj.id, subject, message, None)
-            # send_sms()
             return Response({'message': 'Admin created successfully'}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -184,7 +183,7 @@ class UserResgistrationViewSet(ModelViewSet):
     )
     @transaction.atomic()
     def create_super_admin(self, request, *args, **kwargs):
-        data = request.data
+        data = request.data.copy() 
 
          # email check
         if self.model_class.objects.filter(Q(email=data['email']) | Q(additional_email=data['email'])).first():
@@ -207,7 +206,7 @@ class UserResgistrationViewSet(ModelViewSet):
             except ValidationError:
                 return Response({'message': 'Given password is too weak.'}, status=status.HTTP_400_BAD_REQUEST)
             
-        data['user_role'] = USER_ROLES[2][0]
+        data['user_role'] = USER_ROLES[1][0]
 
         serializer_class = self.get_serializer_class()
         serializer = serializer_class(data=data)
@@ -218,7 +217,6 @@ class UserResgistrationViewSet(ModelViewSet):
                          "Happy networking,\n"
                          "The ClubSphere Team")
             send_email(user_obj.id, subject, message, None)
-            # send_sms()
             return Response({'message': 'Super Admin created successfully'}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -291,7 +289,6 @@ class UserUpdateAndListViewSet(ModelViewSet):
             subject = 'ClubSphere'
             message = 'Your profile information was updated successfully.'
             send_email(None, subject, message, request.user.id)
-            # send_sms()
             return Response({'message': 'User updated successfully'}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

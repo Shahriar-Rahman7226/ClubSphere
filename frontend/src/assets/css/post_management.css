@@ -5,9 +5,9 @@
   --blue-mid: #0456a5;
   --blue-light: #3672d5;
   --white: #ffffff;
+  --surface: #f6f9ff;
 }
 
-/* Global Reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -16,8 +16,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Wrapper */
-.super-admin-wrapper {
+.post-management-page {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(180deg, #fff3b0, #ffffff 70%);
@@ -30,37 +29,30 @@ html, body {
   padding-bottom: 70px;
 }
 
-/* Container */
-.super-admin-container {
+.post-management-container {
   width: 100%;
   max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
-  margin-bottom: 200px;
-}
-
-/* Welcome Section */
-.super-admin-welcome {
+  margin-bottom: 150px;
   text-align: center;
 }
 
-.super-admin-welcome h1 {
-  font-size: 2.6rem;
-  font-weight: 800;
+.post-management-title {
+  font-size: 2.5rem;
+  font-weight: 900;
   color: var(--orange);
-  margin-bottom: 12px;
 }
 
-.super-admin-welcome p {
-  font-size: 1.25rem;
+.post-management-subtitle {
+  font-size: 1.2rem;
   color: var(--navy);
   font-weight: 500;
 }
 
-/* Buttons */
-.super-admin-buttons {
+.post-buttons-container {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -68,35 +60,44 @@ html, body {
   align-items: center;
 }
 
-.super-admin-btn {
-  width: 500px;
-  max-width: 500px;
-  padding: 20px 0;
+.post-btn {
+  width: 95%;
+  max-width: 400px;
+  padding: 18px 0;
   font-size: 1.5rem;
   font-weight: 700;
   border: none;
   border-radius: 12px;
   color: var(--white);
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  text-align: center;
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.super-admin-btn:hover {
+.post-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.create-btn {
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+}
+
+.create-btn:hover {
   background: var(--orange);
   color: var(--navy);
   border: 2px solid var(--navy);
 }
 
-/* Individual Button Gradients */
-.university-btn { background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid)); }
-.admin-btn { background: linear-gradient(90deg, var(--blue-mid), var(--blue-light)); }
-.club-btn { background: linear-gradient(90deg, var(--blue-dark), var(--blue-light)); }
+.edit-btn {
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+}
 
-/* Footer */
+.edit-btn:hover {
+  background: var(--orange);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -106,21 +107,21 @@ footer {
   background: var(--navy);
   color: var(--white);
   text-align: center;
-  box-sizing: border-box;
   z-index: 9999;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .super-admin-container { max-width: 90%; }
-  .super-admin-btn { width: 450px; font-size: 1.4rem; padding: 18px 0; }
-}
-
 @media (max-width: 768px) {
-  .super-admin-container { max-width: 95%; }
-  .super-admin-btn { width: 400px; font-size: 1.3rem; padding: 16px 0; }
+  .post-btn {
+    font-size: 1.3rem;
+    padding: 16px 0;
+  }
 }
 
 @media (max-width: 480px) {
-  .super-admin-btn { width: 100%; font-size: 1.2rem; padding: 14px 0; }
+  .post-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 14px 0;
+  }
 }

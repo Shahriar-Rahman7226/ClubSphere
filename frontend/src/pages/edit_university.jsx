@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
 import "../assets/css/edit_university.css";
 
 const EditUniversity = () => {
+  const navigate = useNavigate();
+
   const [university, setUniversity] = useState({
     name: "Brac University",
     email_domain: "bracu.ac.bd",
@@ -21,10 +24,12 @@ const EditUniversity = () => {
 
   const handleSave = () => {
     alert("University updated successfully!");
+    // Optionally, navigate back after saving
+    // navigate(-1);
   };
 
   const handleCancel = () => {
-    alert("Edit canceled!");
+    navigate(-1); // Go back to previous page
   };
 
   return (
@@ -72,11 +77,10 @@ const EditUniversity = () => {
 
             {/* Buttons */}
             <div className="form-buttons">
-           
               <button className="cancel-btn" onClick={handleCancel}>
                 Cancel
               </button>
-                 <button className="save-btn" onClick={handleSave}>
+              <button className="save-btn" onClick={handleSave}>
                 Save
               </button>
             </div>

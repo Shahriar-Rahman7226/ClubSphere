@@ -1,0 +1,191 @@
+:root {
+  --orange: #ff914d;
+  --navy: #002861;
+  --green: #045600;
+  --blue: #3672d5;
+  --white: #ffffff;
+  --black: #000000;
+  --surface: #f6f9ff;
+}
+
+.create-club-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #fff3b0, #ffffff 60%);
+  font-family: "Poppins", sans-serif;
+  color: var(--navy);
+}
+
+.create-club-card {
+  width: 950px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 48px 56px;
+  box-shadow: 0 12px 30px rgba(2,8,30,0.08);
+}
+
+.create-club-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 28px;
+  color: var(--navy);
+}
+
+.create-club-form .form-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-club-form label {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+  color: var(--navy);
+}
+
+.create-club-form input[type="text"],
+.create-club-form input[type="email"],
+.create-club-form textarea {
+  width: 90%;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 1.25rem;
+  outline: none;
+}
+
+.create-club-form textarea {
+  resize: vertical;
+}
+
+.file-input-wrapper {
+  position: relative;
+  width: 90%;
+  height: 50px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-label {
+  font-size: 1.15rem;
+  color: #333333;
+  z-index: 1;
+}
+
+.create-club-btn {
+  width: 100%;
+  padding: 18px 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-club-btn:hover {
+  transform: scale(1.04);
+  background: var(--blue);
+}
+
+.create-club-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.section-title {
+  margin: 40px 0 16px 0;
+  font-size: 2rem;
+  color: var(--navy);
+}
+
+.club-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.club-tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 12px;
+  font-weight: 600;
+  width: 300px;
+}
+
+.edit-club-btn {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.edit-club-btn:hover {
+  background-color: var(--navy);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .create-club-card {
+    width: 95%;
+    padding: 36px 40px;
+  }
+  .create-club-form input,
+  .create-club-form textarea,
+  .file-input-wrapper {
+    width: 95%;
+  }
+  .club-tile {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 720px) {
+  .create-club-card {
+    width: 100%;
+    padding: 32px 28px;
+  }
+  .create-club-title {
+    font-size: 2.4rem;
+  }
+  .create-club-form input,
+  .create-club-form textarea,
+  .file-input-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .create-club-title {
+    font-size: 2rem;
+  }
+}

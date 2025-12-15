@@ -100,7 +100,7 @@
   border-color: var(--orange);
 }
 
-/* Buttons */
+/* Save / Cancel Buttons */
 .edit-profile-buttons{
   display: flex;
   gap: 18px;
@@ -131,6 +131,40 @@
 
 .cancel-btn:hover,
 .save-btn:hover{
+  transform: translateY(-3px);
+}
+
+/* Reset Password / Sign Out Buttons */
+.edit-profile-extra-buttons{
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.reset-btn,
+.signout-btn{
+  flex: 1;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.reset-btn{
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+.signout-btn{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.reset-btn:hover,
+.signout-btn:hover{
   transform: translateY(-3px);
 }
 
